@@ -13,7 +13,7 @@ const io = new Server(server);
 
 const PORT = process.env.PORT || 3000;
 
-app.use(express.static(__dirname));
+app.use(express.static(__dirname, public));
 app.use(express.json());
 
 const USERS_FILE = path.join(__dirname, "users.json");
