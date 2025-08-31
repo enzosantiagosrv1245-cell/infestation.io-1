@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // --- Referências aos novos elementos do menu ---
+      // --- Referências aos novos elementos do menu ---
     const menuUiContainer = document.getElementById('menu-ui-container');
     const loginSection = document.getElementById('login-section');
     const playSection = document.getElementById('play-section');

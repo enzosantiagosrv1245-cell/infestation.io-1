@@ -1,9 +1,11 @@
 const express = require('express');
 const http = require('http');
-const { Server } = require("socket.io");
+const {
+    Server
+} = require("socket.io");
 const Matter = require('matter-js');
 const fs = require('fs-extra');
-const path = require('path'); // Declarado apenas uma vez
+const path = require('path');
 
 const app = express();
 const server = http.createServer(app);
@@ -11,11 +13,9 @@ const io = new Server(server);
 
 const PORT = process.env.PORT || 3000;
 
-// Serve arquivos estáticos da pasta "public"
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(__dirname));
 app.use(express.json());
 
-// Caminhos para arquivos JSON
 const USERS_FILE = path.join(__dirname, "users.json");
 const MESSAGES_FILE = path.join(__dirname, "messages.json");
 const LINKS_FILE = path.join(__dirname, "links.json");
