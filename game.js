@@ -119,6 +119,26 @@ const objectSprites = {
     pool_table: poolTableSprite
 };
 
+// ADICIONANDO O QUE FALTAVA PARA O JOGO FUNCIONAR
+function gameLoop() {
+    // Limpa o canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    // Desenha o fundo (grama)
+    ctx.fillStyle = '#2d5a27';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    // Aqui você pode adicionar a lógica de desenhar o mapa, personagens, etc.
+    // Por exemplo, desenhar um quadrado de teste:
+    ctx.fillStyle = 'red';
+    ctx.fillRect(canvas.width/2 - 25, canvas.height/2 - 25, 50, 50);
+    
+    requestAnimationFrame(gameLoop);
+}
+
+// Inicia o loop do jogo
+gameLoop();
+
 let myId = null;
 let gameState = {
     players: {},
